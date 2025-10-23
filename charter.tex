@@ -5,22 +5,18 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Dispensador Inteligente de Comida para Gatos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
-%\posgrado{Carrera de Especialización en Inteligencia Artificial}
-%\posgrado{Maestría en Sistemas Embebidos} 
-%\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. Durante Matías Nahuel}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{Ing. Bualó Santiago}
+\pertenenciaDirector{FIUBA} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
@@ -28,7 +24,7 @@
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaINICIO{21 de Octubre de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
@@ -59,7 +55,7 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
+1      & Primera entrega               							& {04} de {Noviembre} de 2025 \\ \hline
 %2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -85,17 +81,16 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de \textcolor{red}{640} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
 \vfill
 
-% Esta parte se construye sola con la información que hayan cargado en el preámbulo del documento y no debe modificarla
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} &  \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 \end{tabular}
 \end{table}
@@ -106,144 +101,114 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El presente trabajo práctico busca implementar un sistema de alimentación inteligente para mascotas, capaz de administrar y controlar de manera automática la entrega de alimento, supervisando su consumo y registrando la información correspondiente. El sistema tiene como finalidad facilitar el cuidado de los gatos en el hogar, asegurando que reciban la cantidad adecuada de comida en los horarios establecidos, incluso en ausencia de los dueños.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+Se ha observado que una de las problemáticas más comunes entre los propietarios de mascotas es la dificultad para garantizar una alimentación constante y controlada, especialmente cuando no se encuentran en el hogar debido a largas jornadas laborales o deben ausentarse por períodos prolongados. En muchos casos, se depende de terceros o de dispensadores automáticos simples que no brindan información sobre si el animal efectivamente se alimentó, ni permiten llevar un registro del consumo diario. El objetivo principal de este proyecto es dar una solución tecnológica a esta necesidad, aplicando principios de automatización y monitoreo inteligente, a fin de mejorar la calidad de vida tanto de las mascotas como de sus dueños.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+El sistema a desarrollar se basará en un conjunto de sensores que permitirán controlar la cantidad de alimento dispensado y verificar su consumo, junto con un mecanismo automatizado que permitirá dosificar las raciones según los horarios programados. Además, el sistema incluirá un registro continuo de datos que posibilitará identificar patrones y comportamientos alimentarios de la mascota, aportando información valiosa para la evaluación y mejora del plan de alimentación junto a profesionales del área.
+El dispositivo tendrá la capacidad de funcionar de manera autónoma, controlando la entrega del alimento, detectando si la ración fue consumida, y comunicándose con una interfaz externa, desde la cual el usuario podrá visualizar reportes, modificar horarios o recibir alertas cuando el depósito de alimento esté próximo a vaciarse.
+
+Actualmente, existen en el mercado diversos dispositivos que permiten automatizar la entrega de comida para mascotas, pero la mayoría presenta limitaciones en cuanto al monitoreo del consumo o la disponibilidad de información remota. En la mayoría de los casos, el usuario no puede saber si el animal efectivamente comió o si se produjo alguna falla en la dispensación.
+La propuesta de este proyecto busca superar esas limitaciones, ofreciendo una solución que combina la automatización, el sensado, el control inteligente y la conectividad. De esta forma, no solo se garantiza la alimentación adecuada del animal, sino que además se obtiene información confiable y útil para su seguimiento.
+
+La iniciativa también pretende sentar las bases de un nuevo enfoque en el cuidado automatizado de mascotas, incorporando tecnologías que hasta el momento se aplicaban principalmente en entornos industriales o de domótica. Así, se impulsa un paradigma en el que la automatización del hogar se extiende al bienestar animal, contribuyendo a una gestión más eficiente del tiempo y a una mejor calidad de vida en los hogares.
+Con esta nueva gestión automatizada de la alimentación, se podrán mejorar los siguientes aspectos:
 
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+\item Mantener un control preciso de las raciones diarias y del consumo efectivo de la mascota.
+\item Establecer rutinas automáticas y personalizadas de alimentación.
+\item Generar reportes de consumo útiles para el seguimiento nutricional.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+\vspace{2.5cm}
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Para llevar a cabo este proyecto, se propone un módulo integral que gestione de forma automática el almacenamiento, dispensado y monitoreo del alimento. Dicho módulo será capaz de administrar el proceso completo de alimentación, registrando la información de consumo y enviándola a una interfaz de usuario desde la cual el propietario podrá consultar el estado del sistema, modificar configuraciones o recibir alertas en caso de que el alimento disponible se encuentre próximo a agotarse.
+El sistema será autónomo, de fácil instalación y adaptable a diferentes entornos domésticos, de modo que pueda operar sin depender de una ubicación fija ni de supervisión constante.
+
+A continuación, se presenta en la Figura \ref{fig:diagBloques} un diagrama en bloques del sistema propuesto, en el cual se observan los principales módulos que lo componen:
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.pdf}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
-
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
+A continuación se listan todas las partes involucradas en el proyecto:
 
 \begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   & \authorname       & -            	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Dueños de mascotas &              	&        	\\ \hline
 \end{tabularx}
+\caption{Identificación de los interesados} 
+\label{tab:interesados}
 \end{table}
 
-El Director suele ser uno de los orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+\vspace{2.5cm}
 
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item \textbf{Auspiciante:} siendo un proyecto de carácter personal, todos los gastos y/o beneficios económicos asociados serán asumidos por el autor del trabajo.
+	\item \textbf{Responsable:} Ing. Durante Matías Nahuel, quien será el responsable de la planificación, diseño, desarrollo e implementación del sistema propuesto.
+	\item \textbf{Orientador:}  Ing. Bualó Santiago, quien actuará como director del trabajo final, brindando acompañamiento y supervisión técnica durante el desarrollo del proyecto.
+	\item \textbf{Usuario final:} dado que el proyecto se orienta a ofrecer una solución para el cuidado automatizado de mascotas, los usuarios finales serán todas aquellas personas que posean gatos y deseen optimizar su alimentación diaria mediante un sistema automático y monitoreado.
 \end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+El propósito de este proyecto es aplicar tecnologías de automatización y monitoreo inteligente al ámbito del cuidado doméstico de mascotas, a través del desarrollo de un sistema que administre la alimentación de forma confiable, eficiente y adaptable. La iniciativa busca brindar una solución que facilite la rutina diaria de los dueños de gatos, asegurando que el animal reciba la cantidad adecuada de alimento en los horarios establecidos, incluso en situaciones en las que el propietario no pueda supervisar directamente el proceso. Además, el sistema permitirá registrar y analizar el consumo de alimento, aportando información útil para el seguimiento nutricional. En términos generales, este proyecto se orienta a mejorar la calidad de vida de las mascotas y optimizar el tiempo de sus cuidadores, incorporando soluciones tecnológicas al ámbito doméstico.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
-El proyecto incluye:
+Dentro del alcance del proyecto se contemplan las siguientes tareas principales:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
+	\item El desarrollo de un dispositivo capaz de automatizar la alimentación de gatos, permitiendo dispensar el alimento mediante los siguientes modos:
 		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
+		\item \textbf{Automático:} mediante la programación de horarios y raciones predefinidas.
+		\item \textbf{Manual}: a través de un pulsador que permitirá activar el dispensado del alimento.
+		\item \textbf{Remoto (opcional)}: mediante una aplicación móvil o conexión web, que posibilitará la gestión y el monitoreo del sistema a distancia.
 		\end{itemize}
-	\item ...
+	\item El diseño del sistema de sensado, encargado de controlar el nivel de alimento disponible tanto en el depósito como en el plato.
+	\item La implementación de un sistema de registro de datos que permita almacenar información sobre las raciones dispensadas y el consumo de alimento.
+	\item El desarrollo de una interfaz externa al dispositivo, desde la cual el usuario podrá visualizar el estado del sistema, modificar los horarios de alimentación y recibir alertas ante fallas o niveles bajos de alimento.
+	\item El sistema de alimentaci´on propio del prototipo.
 	
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+No serán parte del proyecto los siguientes:
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
+\begin{itemize}
+	\item No se desarrollará una aplicación móvil o plataforma web completa.
+	\item No se incorporará identificación individual de las mascotas.
+	\item No se contemplará la utilización de servicios de almacenamiento externo o en la nube.
+	\item No se desarrollará un prototipo final destinado a su comercialización.
+	\item No se diseñará la estructura definitiva del dispositivo.
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Se dispondrá de los recursos económicos para la adquisición de materiales y componentes requeridos.
+	\item Los componentes electrónicos y mecánicos necesarios estarán disponibles en el mercado local.
+	\item El dispositivo podrá ser probado en un entorno doméstico con suministro eléctrico.
+	\item No habrá restricciones reglamentarias, técnicas o logísticas que impidan el desarrollo y la validación del prototipo.
+	\item El alimento utilizado será de tipo seco, con formato y tamaño compatibles con el mecanismo de dosificación a implementar.
+	
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
