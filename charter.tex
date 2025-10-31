@@ -28,6 +28,7 @@
 \fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
+\newcommand{\horaTrabajo}{640}
 
 \begin{document}
 
@@ -81,7 +82,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de \textcolor{red}{640} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de \textcolor{red}{\horaTrabajo} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -212,42 +213,44 @@ Para el desarrollo del presente proyecto se supone que:
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
-
+A continuación se enumeran los requerimientos del proyecto:
 \begin{enumerate}
 	\item Requerimientos funcionales:
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El sistema debe dispensar alimento seco de manera automática en horarios programados.
+			\item El sistema debe permitir el dispensado manual mediante un botón físico.
+			\item El sistema debe registrar y almacenar los datos de consumo diario.
+			\item El sistema debe detectar el nivel de alimento disponible en el tanque.
+			\item El sistema debe medir el peso del alimento dispensado en el plato.
+			\item El sistema debe emitir una alerta cuando el nivel de alimento del tanque sea bajo.
+			\item El sistema debe ser capaz de operar de forma autónoma sin conexión a internet.
+			\item El sistema debe permitir la visualización de reportes e historial de consumo desde una interfaz web o aplicación.
 		\end{enumerate}
-	\item Requerimientos de documentación:
+	\item Requerimientos de hardware:
 		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
+			\item El sistema deberá incorporar una placa microcontroladora de la familia STM, a fin de mantener la compatibilidad con las bibliotecas HAL (Hardware Abstraction Layer) utilizadas en el desarrollo del firmware.
+			\item El sensado de peso se realizará mediante módulos HX711 y celdas de carga.
+			\item El sistema deberá incorporar un módulo Wi-Fi (ESP8266 o ESP32) para la comunicación remota.
+			\item El sistema deberá contar con un botón físico para el accionamiento manual.
+			\item El prototipo deberá alimentarse mediante una fuente externa.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimiento de firmware:
+		\begin{enumerate}
+			\item El firmware deberá ser desarrollado en lenguaje C.
+			\item Se deberá integrar un sistema operativo en tiempo real (FreeRTOS) para la gestión de tareas concurrentes.
+			\item El sistema deberá incluir rutinas de verificación de sensores y comunicación, realizando pruebas unitarias e integrales de cada módulo.
+		\end{enumerate}
+	\item Requerimientos de gestión:
+		\begin{enumerate}
+			\item Se utilizará un repositorio público (GitHub) para el control de versiones y seguimiento del código.
+			\item El tiempo total estimado para el desarrollo del prototipo será de {\horaTrabajo} horas.
+			\item Se establecerán reuniones periódicas de seguimiento con el director del trabajo final para evaluar el progreso del proyecto.
+		\end{enumerate}
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
 
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
 
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
 
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
