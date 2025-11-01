@@ -255,34 +255,77 @@ A continuación se enumeran los requerimientos del proyecto:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
-
-El formato propuesto es: 
+En esta sección se enuncian las historias de usuario, asignándoles un puntaje según los siguientes aspectos:
 \begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
+	\item Dificultad del trabajo.
+	\item Complejidad del trabajo.
+	\item Riesgo asociado.
 \end{enumerate}
-\end{consigna}
+
+Para asignar la ponderación, se utiliza una escala basada en la serie de Fibonacci, donde un número mayor implica un mayor costo.
+El Story Point se calcula sumando las tres ponderaciones, y en caso de que el resultado no pertenezca a la serie, se redondea al número superior más cercano.
+
+\begin{enumerate}
+	\item Como dueño de mascota quiero poder programar los horarios de comida para asegurar que mi gato reciba su alimento de forma regular y sin depender de mi presencia.
+		\begin{itemize}
+			\item Dificultad: 5
+			\item Complejidad: 5
+			\item Riesgo: 8
+			\item Story Point: 21
+		\end{itemize}
+	\item Como usuario quiero recibir una alerta cuando el tanque de alimento esté por terminarse, para poder recargarlo antes de que se quede sin comida.
+		\begin{itemize}
+			\item Dificultad: 8
+			\item Complejidad: 5
+			\item Riesgo: 3
+			\item Story Point: 21
+		\end{itemize}
+	\item Como usuario quiero disponer en cualquier momento de la información sobre si mi gato consumió su comida, a través de la medición del peso del plato.	
+		\begin{itemize}
+			\item Dificultad: 8
+			\item Complejidad: 8
+			\item Riesgo: 5
+			\item Story Point: 34
+		\end{itemize}
+	\item Como usuario quiero poder dispensar alimento manualmente, para darle comida a mi gato fuera de los horarios programados.
+		\begin{itemize}
+			\item Dificultad: 3
+			\item Complejidad: 3
+			\item Riesgo: 2
+			\item Story Point: 8
+		\end{itemize}
+	\item Como usuario quiero consultar reportes sobre el consumo diario y semanal, para conocer los hábitos alimenticios de mi gato.
+		\begin{itemize}
+			\item Dificultad: 8
+			\item Complejidad: 13
+			\item Riesgo: 8
+			\item Story Point: 34
+		\end{itemize}	
+	\item Como usuario quiero que el sistema funcione incluso sin conexión a internet, garantizando el dispensado automático aunque haya fallas en la red Wi-Fi.
+		\begin{itemize}
+			\item Dificultad: 5
+			\item Complejidad: 8
+			\item Riesgo: 8
+			\item Story Point: 21
+		\end{itemize}				
+\end{enumerate}
+
+
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
-	\item Código fuente del firmware.
-	\item Diagrama de instalación.
-	\item Memoria del trabajo final.
-	\item etc...
+	\item Diagrama de bloques del sistema propuesto.
+	\item Diseño esquemático del circuito electrónico.
+	\item Simulación o integración del hardware en entorno de prueba.
+	\item Código fuente del firmware desarrollado en lenguaje C.
+	\item Repositorio con documentación técnica y control de versiones.
+	\item Documentación técnica y hojas de datos de las placas y módulos utilizados.
+	\item Guía de usuario.
 \end{itemize}
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
