@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Dispensador Inteligente de Comida para Gatos} 
+\titulo{Dispensador inteligente de comida para gatos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -24,11 +24,11 @@
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{21 de Octubre de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{21 de octubre de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{14 de diciembre de 2025} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{20 de julio de 2026}	%Fecha de defensa pública del trabajo final
 
-\newcommand{\horaTrabajo}{640}
+\newcommand{\horaTrabajo}{620}
 
 \begin{document}
 
@@ -56,11 +56,8 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Primera entrega               							& {04} de {Noviembre} de 2025 \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
+1      & Primera entrega               							& {04} de {noviembre} de 2025 \\ \hline
+2      & Segunda entrega                                          & {11} de {noviembre} de 2025 \\ \hline
 %3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
 %4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
 
@@ -82,7 +79,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de \textcolor{red}{\horaTrabajo} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de {\horaTrabajo} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -145,7 +142,6 @@ A continuación se listan todas las partes involucradas en el proyecto:
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   & \authorname       & -            	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
 Usuario final & Dueños de mascotas &              	&        	\\ \hline
@@ -158,8 +154,7 @@ Usuario final & Dueños de mascotas &              	&        	\\ \hline
 \vspace{2.5cm}
 
 \begin{itemize}
-	\item \textbf{Auspiciante:} siendo un proyecto de carácter personal, todos los gastos y/o beneficios económicos asociados serán asumidos por el autor del trabajo.
-	\item \textbf{Responsable:} Ing. Durante Matías Nahuel, quien será el responsable de la planificación, diseño, desarrollo e implementación del sistema propuesto.
+	\item \textbf{Responsable:} Ing. Durante Matías Nahuel, quien será el responsable de la planificación, diseño, desarrollo e implementación del sistema propuesto, asumiendo además todos los gastos y/o beneficios económicos al tratarse de un proyecto de carácter personal.
 	\item \textbf{Orientador:}  Ing. Bualó Santiago, quien actuará como director del trabajo final, brindando acompañamiento y supervisión técnica durante el desarrollo del proyecto.
 	\item \textbf{Usuario final:} dado que el proyecto se orienta a ofrecer una solución para el cuidado automatizado de mascotas, los usuarios finales serán todas aquellas personas que posean gatos y deseen optimizar su alimentación diaria mediante un sistema automático y monitoreado.
 \end{itemize}
@@ -167,7 +162,7 @@ Usuario final & Dueños de mascotas &              	&        	\\ \hline
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto es aplicar tecnologías de automatización y monitoreo inteligente al ámbito del cuidado doméstico de mascotas, a través del desarrollo de un sistema que administre la alimentación de forma confiable, eficiente y adaptable. La iniciativa busca brindar una solución que facilite la rutina diaria de los dueños de gatos, asegurando que el animal reciba la cantidad adecuada de alimento en los horarios establecidos, incluso en situaciones en las que el propietario no pueda supervisar directamente el proceso. Además, el sistema permitirá registrar y analizar el consumo de alimento, aportando información útil para el seguimiento nutricional. En términos generales, este proyecto se orienta a mejorar la calidad de vida de las mascotas y optimizar el tiempo de sus cuidadores, incorporando soluciones tecnológicas al ámbito doméstico.
+El propósito de este proyecto es aplicar tecnologías de automatización y monitoreo inteligente al cuidado doméstico de mascotas, mediante el desarrollo de un sistema confiable y adaptable que administre, registre y analice la alimentación de gatos, optimizando la interacción entre el usuario y su mascota.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -190,11 +185,11 @@ Dentro del alcance del proyecto se contemplan las siguientes tareas principales:
 No serán parte del proyecto los siguientes:
 
 \begin{itemize}
-	\item No se desarrollará una aplicación móvil o plataforma web completa.
-	\item No se incorporará identificación individual de las mascotas.
-	\item No se contemplará la utilización de servicios de almacenamiento externo o en la nube.
-	\item No se desarrollará un prototipo final destinado a su comercialización.
-	\item No se diseñará la estructura definitiva del dispositivo.
+	\item El desarrollo de una aplicación móvil o plataforma web completa.
+	\item La incorporación de identificación individual de las mascotas.
+	\item La utilización de servicios de almacenamiento externo o en la nube.
+	\item El desarrollo de un prototipo final destinado a su comercialización.
+	\item El diseño de la estructura definitiva del dispositivo.
 \end{itemize}
 
 \section{5. Supuestos del proyecto}
@@ -238,7 +233,7 @@ A continuación se enumeran los requerimientos del proyecto:
 		\begin{enumerate}
 			\item El firmware deberá ser desarrollado en lenguaje C.
 			\item Se deberá integrar un sistema operativo en tiempo real (FreeRTOS) para la gestión de tareas concurrentes.
-			\item El sistema deberá incluir rutinas de verificación de sensores y comunicación, realizando pruebas unitarias e integrales de cada módulo.
+			\item El sistema deberá incluir rutinas de verificación de sensores y comunicación, realizando pruebas unitarias e integrales para cada módulo.
 		\end{enumerate}
 	\item Requerimientos de gestión:
 		\begin{enumerate}
@@ -341,7 +336,7 @@ A continuación se detallan las tareas y sub-tareas, junto con su duración esti
 	\item Redacción de informes y presentaciones (25 h)
 	\item Elaboración de guía de usuario y otros documentos afines (10 h)
 	\end{enumerate}
-\item Investigación y análisis técnico (120 h)
+\item Investigación y análisis técnico (130 h)
 	\begin{enumerate}
 	\item Relevamiento de dispensadores automáticos existentes en el mercado(20 h)
 	\item Selección y análisis de sensores de peso (25 h)
@@ -349,35 +344,35 @@ A continuación se detallan las tareas y sub-tareas, junto con su duración esti
 	\item Evaluación de métodos de dispensado de alimento (15 h)
 	\item Estudio de librerías de FreeRTOS y drivers compatibles (20 h)
 	\item Análisis de estructura mecánica del dispensador (10 h)
-	\item Investigación de protocolos Wi-Fi y BLE para comunicación del sistema (10 h)
+	\item Investigación de protocolos Wi-Fi y BLE para comunicación del sistema (20 h)
 	\end{enumerate}
-\item Desarrollo de hardware (150 h)
+\item Desarrollo de hardware (160 h)
 	\begin{enumerate}
 	\item Diseño esquemático del circuito (30 h)
 	\item Diseño del PCB y generación de archivos de fabricación (40 h)
 	\item Ensamblado y soldadura de componentes (25 h)
 	\item Diseño y construcción de la estructura mecánica del dispensador (35 h)
-	\item Pruebas eléctricas y de funcionamiento inicial (20 h)
+	\item Pruebas eléctricas y de funcionamiento inicial (30 h)
 	\end{enumerate}
-\item Desarrollo de Software (170 h)	
+\item Desarrollo de Software (180 h)	
 	\begin{enumerate}
 	\item  Desarrollo de drivers específicos para cada uno de los periféricos (35 h)
 	\item Implementación de la máquina de estados y funcionamiento del dispensado (30 h)
 	\item Integración de FreeRTOS y gestión de tareas (40 h)
 	\item Implementación de comunicación Wi-Fi con servidor (30 h)
 	\item Desarrollo de registro de datos y almacenamiento local (20 h)
-	\item Optimización del código y pruebas de funcionamiento (15 h)	
+	\item Optimización del código y pruebas de funcionamiento (25 h)	
 	\end{enumerate}	
-\item Fabricación y armado del prototipo (60 h)	
+\item Fabricación y armado del prototipo (70 h)	
 	\begin{enumerate}
 	\item Fabricación o montaje del PCB (10 h)
 	\item Adquisición e integración de componentes (10 h)
 	\item Ensamblado general del dispositivo (20 h)
-	\item Pruebas funcionales y ajustes mecánicos (20 h)
+	\item Pruebas funcionales y ajustes mecánicos (30 h)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 630 h
+Cantidad total de horas: {\horaTrabajo} h
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
