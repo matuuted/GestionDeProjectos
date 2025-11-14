@@ -79,7 +79,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de {\horaTrabajo} horas y un costo estimado de \textcolor{red}{\$ 8000}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de dispensador inteligante de comida para gatos, capaz de automatizar la entrega de alimento seco en horarios programados, monitorear el consumo y reportar la información a una plataforma web, y tendrá un presupuesto preliminar estimado de {\horaTrabajo} horas y un costo estimado de 9837 USD, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -328,47 +328,56 @@ Los entregables del proyecto son:
 A continuación se detallan las tareas y sub-tareas, junto con su duración estimada en horas de trabajo.
 
 \begin{enumerate}
-\item Planificación y gestión del proyecto (80 h)
+\item Planificación y gestión del proyecto (75 h)
 	\begin{enumerate}
 	\item Elaboración del plan de trabajo (10 h)
 	\item Definición de componentes y proveedores (15 h)
 	\item Planificación del desarrollo de firmware y hardware (20 h)
-	\item Redacción de informes y presentaciones (25 h)
+	\item Redacción de informes y presentaciones (20 h)
 	\item Elaboración de guía de usuario y otros documentos afines (10 h)
 	\end{enumerate}
-\item Investigación y análisis técnico (130 h)
+\item Investigación y análisis técnico (85 h)
 	\begin{enumerate}
-	\item Relevamiento de dispensadores automáticos existentes en el mercado(20 h)
-	\item Selección y análisis de sensores de peso (25 h)
-	\item Evaluación de opciones de conectividad (20 h)
-	\item Evaluación de métodos de dispensado de alimento (15 h)
-	\item Estudio de librerías de FreeRTOS y drivers compatibles (20 h)
-	\item Análisis de estructura mecánica del dispensador (10 h)
-	\item Investigación de protocolos Wi-Fi y BLE para comunicación del sistema (20 h)
+	\item Relevamiento de dispensadores automáticos existentes en el mercado (10 h)
+	\item Selección y análisis de sensores de peso (15 h)
+	\item Evaluación de opciones de conectividad (15 h)
+	\item Evaluación de métodos de dispensado de alimento (10 h)
+	\item Estudio de librerías de FreeRTOS y drivers compatibles (15 h)
+	\item Análisis de estructura mecánica del dispensador (8 h)
+	\item Investigación de protocolos Wi-Fi y BLE para comunicación del sistema (12 h)
 	\end{enumerate}
-\item Desarrollo de hardware (160 h)
+\item Desarrollo de hardware (135 h)
 	\begin{enumerate}
 	\item Diseño esquemático del circuito (30 h)
-	\item Diseño del PCB y generación de archivos de fabricación (40 h)
-	\item Ensamblado y soldadura de componentes (25 h)
-	\item Diseño y construcción de la estructura mecánica del dispensador (35 h)
-	\item Pruebas eléctricas y de funcionamiento inicial (30 h)
+	\item Diseño del PCB y generación de archivos de fabricación (30 h)
+	\item Ensamblado y soldadura de componentes (20 h)
+	\item Diseño y construcción de la estructura mecánica del dispensador (30 h)
+	\item Pruebas eléctricas y de funcionamiento inicial (25 h)
 	\end{enumerate}
-\item Desarrollo de Software (180 h)	
+\item Desarrollo de software (150 h)	
 	\begin{enumerate}
-	\item  Desarrollo de drivers específicos para cada uno de los periféricos (35 h)
-	\item Implementación de la máquina de estados y funcionamiento del dispensado (30 h)
-	\item Integración de FreeRTOS y gestión de tareas (40 h)
+	\item  Desarrollo de drivers específicos para cada uno de los periféricos (30 h)
+	\item Implementación de la máquina de estados y funcionamiento del dispensado (25 h)
+	\item Integración de FreeRTOS y gestión de tareas (30 h)
 	\item Implementación de comunicación Wi-Fi con servidor (30 h)
-	\item Desarrollo de registro de datos y almacenamiento local (20 h)
-	\item Optimización del código y pruebas de funcionamiento (25 h)	
+	\item Desarrollo de registro de datos y almacenamiento local (15 h)
+	\item Optimización del código y pruebas de funcionamiento (20 h)	
 	\end{enumerate}	
-\item Fabricación y armado del prototipo (70 h)	
+\item Fabricación y armado del prototipo (60 h)	
 	\begin{enumerate}
 	\item Fabricación o montaje del PCB (10 h)
 	\item Adquisición e integración de componentes (10 h)
 	\item Ensamblado general del dispositivo (20 h)
-	\item Pruebas funcionales y ajustes mecánicos (30 h)
+	\item Pruebas funcionales y ajustes mecánicos (20 h)
+	\end{enumerate}
+
+\vspace{2.5cm}
+\item Documentación (115 h)
+	\begin{enumerate}
+	\item Realización de informes de avance (30 h)
+	\item Elaboración de la memoria técnica del proyecto (40 h)
+	\item Elaboración del video demostrativo (15 h)
+	\item Elaboración de la presentación final del proyecto (30 h)
 	\end{enumerate}
 \end{enumerate}
 
@@ -377,130 +386,48 @@ Cantidad total de horas: {\horaTrabajo} h
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
+En la Figura \ref{fig:AoN} se puede ver el diagrama Activity on Node del presente proyecto. El camino crítico en el
+diagrama está representado por los bloques que tienen un recuadro rojo.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=.86\textwidth]{./Figuras/OnNode.pdf}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
 
-\end{consigna}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
+En la Figura \ref{fig:diagGantt} se presenta el Diagrama de Gantt correspondiente al desarrollo del proyecto. Para su elaboración se empleó el software GanttProject, tal como se muestra en la Figura \ref{fig:Gantt}, donde se detalla el listado completo de tareas. La planificación se realizó considerando una dedicación de 2 horas diarias (equivalente a 10 horas semanales) y respetando las dependencias definidas previamente en el diagrama Activity on Node. Con esta asignación horaria, la fecha estimada de finalización es el 6 de junio de 2026, lo que brinda un margen suficiente previo a la presentación final programada para el 20 de julio de 2026.
 
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
 
 \begin{figure}[htpb]
-  \begin{center}
-    \begin{ganttchart}[
-      time slot unit=day,
-      time slot format=isodate,
-      x unit=0.038cm,
-      y unit title=0.7cm,
-      y unit chart=0.6cm,
-      milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{ganttchart}
-  \end{center}
-  \caption{Diagrama de gantt de ejemplo}
-  \label{fig:gantt}
+\centering 
+\includegraphics[width=.6\textwidth]{./Figuras/Gantt-1.png}
+\caption{Listado de tareas \textit{GanttProject}.}
+\label{fig:Gantt}
 \end{figure}
 
 
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
+\includegraphics[height=.83\textheight]{./Figuras/Gantt-2.png}
+\caption{Diagrama de Gantt según la lista de tareas.}
 \label{fig:diagGantt}
 \end{figure}
 
 \end{landscape}
 
-\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
+A continuación se detallan los costos asociados al proyecto, expresados en dólares estadounidenses (USD). El costo de ingeniería se estimó en función de las horas totales dedicadas, mientras que los valores de los materiales y componentes se tomaron de manera estimativa a partir de proveedores internacionales. Los costos indirectos incluyen gastos administrativos y de consumo eléctrico vinculados al desarrollo del prototipo.
 
 \begin{table}[htpb]
 \centering
@@ -513,24 +440,35 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+
+Trabajo directo: horas de ingeniería &
+  620 &
+  15 USD &
+  9300 USD \\ \hline
+
+Componentes electrónicos (MCU, sensores, etc.) &
+1 &
+180 USD &
+180 USD \\ \hline
+
+Placas PCB &
+   1 &
+   50 USD &
+   50 USD \\ \hline
+
+Materiales para la estructura &
+   1 &
+   60 USD &
+   60 USD \\ \hline
+
+Dispositivo de testing &
+   1 &
+   80 USD &
+   80 USD \\ \hline
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  9670 USD \\ \hline
+
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -538,26 +476,25 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+
+Administración &
+   50 h &
+   2 USD/h &
+   100 USD \\ \hline
+
+Horas de electricidad &
+   670 h &
+   0.1 USD/h &
+   67 USD \\ \hline
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  167 USD \\ \hline
+
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
+  9837 USD \\ \hline
 \end{tabularx}%
 \end{table}
-
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
