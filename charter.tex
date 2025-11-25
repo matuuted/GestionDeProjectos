@@ -554,22 +554,28 @@ Criterio adoptado: se tomarán medidas de mitigación en los riesgos cuyos núme
 
 \textbf{c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:}
  
-Riesgo 1: retrasos por disponibilidad de tiempo
+Riesgo 1: retrasos por disponibilidad de tiempo o carga laboral externa
   \begin{itemize}
 	\item Plan de mitigación:organizar bloques fijos de trabajo semanales y mantener el avance mediante entregables parciales, priorizando tareas críticas para asegurar un progreso continuo aun con limitaciones de horario.
 	\item Severidad (S*): 5. Una planificación más granular reduce el impacto global de posibles retrasos en etapas clave.
 	\item Probabilidad de ocurrencia (O*): 4. Al estructurar el trabajo en sesiones breves pero constantes, disminuye la probabilidad de acumulación de tareas y desfasajes significativos.
 	\end{itemize}
 
-Riesgo 2: fallas en sensores o drivers
+Riesgo 2: fallas en sensores o incompatibilidad con drivers
   \begin{itemize}
 	\item Plan de mitigación: realizar pruebas unitarias tempranas sobre cada sensor y módulo de driver, mantener una biblioteca de ejemplos de referencia y disponer de repuestos de los componentes más críticos.
 	\item Severidad (S*): 6. Las pruebas aisladas permiten detectar fallas antes de la integración, reduciendo su impacto en el desarrollo del sistema.
 	\item Probabilidad de ocurrencia (O*): 4. Contar con repuestos y validaciones previas disminuye la probabilidad de interrupciones prolongadas durante la implementación.
 	\end{itemize}
 
+Riesgo 3: demoras en la adquisición de componentes electrónicos
+  \begin{itemize}
+	\item Plan de mitigación: anticipar la compra de los componentes principales realizando un relevamiento temprano de proveedores nacionales e internacionales, privilegiando aquellos con mayor disponibilidad y tiempos de entrega confirmados. Además, adquirir repuestos de los insumos críticos para evitar interrupciones prolongadas durante la integración del prototipo.
+	\item Severidad (S*): 4. Al contar con componentes de reemplazo y planificar la adquisición con antelación, se reduce el impacto de una eventual falta de insumos sobre el avance global del proyecto.
+	\item Probabilidad de ocurrencia (O*): 5. La compra anticipada y la disponibilidad de alternativas disminuyen la probabilidad de demoras críticas, aunque el riesgo persiste debido a la variabilidad normal del mercado.
+	\end{itemize}
 
-Riesgo 4: problemas en la integración del firmware y validación del sistema
+Riesgo 4: problemas en la integración del firmware
   \begin{itemize}
 	\item Plan de mitigación: establecer hitos semanales de avance y realizar pruebas incrementales sobre cada módulo del firmware para detectar fallas tempranas.
 	\item Severidad (S*): 6. Una integración progresiva reduce el impacto global ante errores funcionales.
@@ -592,6 +598,7 @@ A continuación se listan los principales requerimientos del proyecto, junto con
 
 \end{itemize}
 
+\vspace{2.5cm}
 \begin{itemize} 
 \item Req \#1.2: el sistema deberá detectar el nivel de alimento mediante sensores adecuados.
 
@@ -611,8 +618,6 @@ A continuación se listan los principales requerimientos del proyecto, junto con
 \end{itemize}
 
 \end{itemize}
-
-\vspace{2.5cm}
 
 \begin{itemize} 
 \item Req \#1.4: el sistema deberá almacenar localmente datos del funcionamiento.
@@ -667,8 +672,6 @@ A continuación se establecen las pautas para realizar la evaluación final del 
 		\item Se evaluará si los objetivos del proyecto fueron cumplidos conforme al plan original.
 		\item Se documentarán las causas principales de los desvíos y se propondrán medidas de mejora para futuros proyectos.
 	\end{itemize}
-	
-\vspace{2.5cm}
 
 \item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
 	\begin{itemize}
