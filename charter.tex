@@ -57,9 +57,9 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Primera entrega               							& {04} de {noviembre} de 2025 \\ \hline
-2      & Segunda entrega                                          & {11} de {noviembre} de 2025 \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
+2      & Segunda entrega                                        & {11} de {noviembre} de 2025 \\ \hline
+3      & Tercera entrega                 						& {18} de {noviembre} de 2025 \\ \hline
+4      & Cuarta entrega	                                	 	& {25} de {noviembre} de 2025 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -386,12 +386,13 @@ Cantidad total de horas: {\horaTrabajo} h
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-En la Figura \ref{fig:AoN} se puede ver el diagrama Activity on Node del presente proyecto. El camino crítico en el
-diagrama está representado por los bloques que tienen un recuadro rojo.
+En la Figura \ref{fig:AoN} se puede ver el diagrama Activity on Node del presente proyecto. El diagrama incorpora la fecha de inicio y la fecha de fin del proyecto, junto con la duración de cada tarea expresada en horas. La duración total del proyecto es de 620 horas considerando todas las tareas previstas.
+El camino crítico en el diagrama está representado por los bloques que tienen un recuadro rojo y flechas del mismo color, destacando la secuencia de tareas que determinan el tiempo mínimo del proyecto. La duración del camino crítico es de 290 horas.
+
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.86\textwidth]{./Figuras/OnNode.pdf}
+\includegraphics[width=.68\textwidth]{./Figuras/OnNode.pdf}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
@@ -499,35 +500,39 @@ Horas de electricidad &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+\textbf{a) Identificación de los riesgos y estimación de sus consecuencias:}
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+\textbf{Riesgo 1:} retrasos por disponibilidad de tiempo o carga laboral externa
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad: 7. Un retraso impactaría directamente en el cumplimiento del cronograma general del proyecto.
+	\item Ocurrencia: 6. La dedicación disponible puede verse afectada por carga laboral concurrente.
 \end{itemize}   
 
-Riesgo 2:
+\textbf{Riesgo 2:} fallas en sensores o incompatibilidad con drivers
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad: 8. Problemas en sensores críticos (como el de peso) impedirían realizar pruebas y validar el funcionamiento del prototipo.
+	\item Ocurrencia: 5. Dependiendo del fabricante, es posible encontrar variaciones en calidad, ruido eléctrico o diferencias en los drivers.
 \end{itemize}
 
-Riesgo 3:
+\textbf{Riesgo 3:} demoras en la adquisición de componentes electrónicos
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad: 6. La falta de componentes retrasaría tareas de ensamblado y pruebas iniciales del hardware.
+	\item Ocurrencia: 7.El mercado local presenta disponibilidad irregular y tiempos de entrega prolongados.
 \end{itemize}
 
+\textbf{Riesgo 4:} problemas en la integración del firmware
+\begin{itemize}
+	\item Severidad: 9. Fallas en la integración del firmware afectarán directamente la operación global del sistema.
+	\item Ocurrencia: 6. La coexistencia de múltiples periféricos (I2C, FreeRTOS, Wi-Fi/BLE) aumenta la probabilidad de errores o bloqueos.
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+\textbf{Riesgo 5:} fallas mecánicas o atascos en el mecanismo dispensador
+\begin{itemize}
+	\item Severidad: 7. Un atasco en el mecanismo impediría la correcta dispensación del alimento y comprometería la demostración final.
+	\item Ocurrencia: 4. El comportamiento del alimento seco y las tolerancias mecánicas pueden generar fricción o acumulación.
+\end{itemize}
+
+\textbf{b) A continuación se puede observar la tabla de gestión de riesgos:}
 
 \begin{table}[htpb]
 \centering
@@ -535,77 +540,150 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+
+Riesgo 1: retrasos por disponibilidad de tiempo & 7 & 6 & 42 & 5 & 4 & 20 \\ \hline
+Riesgo 2: fallas en sensores o drivers & 8 & 5 & 40 & 6 & 4 & 24 \\ \hline
+Riesgo 3: demoras en la adquisición de componentes & 6 & 7 & 42 & 4 & 5 & 20 \\ \hline
+Riesgo 4: problemas en la integración del firmware & 9 & 6 & 54 & 6 & 4 & 24 \\ \hline
+Riesgo 5: fallas mecánicas o atascos & 7 & 4 & 28 & 5 & 3 & 15 \\ \hline
+
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
+Criterio adoptado: se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 40. A continuación se lista el plan de mitigación para cada tarea.
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
-
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+\textbf{c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:}
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
+Riesgo 1: retrasos por disponibilidad de tiempo
   \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+	\item Plan de mitigación:organizar bloques fijos de trabajo semanales y mantener el avance mediante entregables parciales, priorizando tareas críticas para asegurar un progreso continuo aun con limitaciones de horario.
+	\item Severidad (S*): 5. Una planificación más granular reduce el impacto global de posibles retrasos en etapas clave.
+	\item Probabilidad de ocurrencia (O*): 4. Al estructurar el trabajo en sesiones breves pero constantes, disminuye la probabilidad de acumulación de tareas y desfasajes significativos.
 	\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 2: fallas en sensores o drivers
+  \begin{itemize}
+	\item Plan de mitigación: realizar pruebas unitarias tempranas sobre cada sensor y módulo de driver, mantener una biblioteca de ejemplos de referencia y disponer de repuestos de los componentes más críticos.
+	\item Severidad (S*): 6. Las pruebas aisladas permiten detectar fallas antes de la integración, reduciendo su impacto en el desarrollo del sistema.
+	\item Probabilidad de ocurrencia (O*): 4. Contar con repuestos y validaciones previas disminuye la probabilidad de interrupciones prolongadas durante la implementación.
+	\end{itemize}
 
-\end{consigna}
+
+Riesgo 4: problemas en la integración del firmware y validación del sistema
+  \begin{itemize}
+	\item Plan de mitigación: establecer hitos semanales de avance y realizar pruebas incrementales sobre cada módulo del firmware para detectar fallas tempranas.
+	\item Severidad (S*): 6. Una integración progresiva reduce el impacto global ante errores funcionales.
+	\item Probabilidad de ocurrencia (O*): 4. Una integración incremental con pruebas intermedias reduce la posibilidad de errores acumulados entre módulos, disminuyendo la probabilidad de fallas complejas en etapas avanzadas.
+	\end{itemize}
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+A continuación se listan los principales requerimientos del proyecto, junto con sus acciones de verificación y validación para cada uno:
 
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+\item Req \#1.1: el dispositivo deberá dispensar alimento de manera controlada y consistente.
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+	\item Se verificará que el motor y el mecanismo de apertura cumplan con los valores de torque, velocidad y consumo especificados para un dispensado estable.
+	\item Se validará que la cantidad de alimento liberada sea uniforme mediante pruebas repetitivas bajo distintas condiciones de operación.
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
+\begin{itemize} 
+\item Req \#1.2: el sistema deberá detectar el nivel de alimento mediante sensores adecuados.
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
+\begin{itemize}
+	\item Se verificará la documentación técnica del sensor elegido, corroborando su precisión y rango de medición.
+	\item Se validará la lectura del nivel comparando las mediciones con valores reales en múltiples ciclos, registrando su variación y estabilidad.
+\end{itemize}
 
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\end{itemize}
 
-\end{consigna}
+\begin{itemize} 
+\item Req \#1.3: el dispositivo deberá conectarse correctamente a la red Wi-Fi para permitir control y monitoreo remoto.
+
+\begin{itemize}
+	\item Se verificará que el módulo Wi-Fi cumpla con el estándar 802.11 b/g/n y que su integración eléctrica y de firmware sea correcta.
+	\item Se validará que el dispositivo pueda enviar y recibir datos de manera sostenida, manteniendo una conexión estable con la aplicación o servidor.
+\end{itemize}
+
+\end{itemize}
+
+\vspace{2.5cm}
+
+\begin{itemize} 
+\item Req \#1.4: el sistema deberá almacenar localmente datos del funcionamiento.
+
+\begin{itemize}
+	\item Se verificará que la memoria Flash cumpla con los requisitos de capacidad, integridad y tiempos de acceso.
+	\item Se validará que la información almacenada se registre y recupere correctamente durante la ejecución, sin pérdidas de datos.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.5: el firmware deberá operar bajo FreeRTOS con correcta gestión de tareas y sincronización.
+
+\begin{itemize}
+	\item Se verificará la asignación de prioridades, uso de colas, semáforos y temporizadores según la arquitectura definida.
+	\item Se validará la estabilidad del sistema ejecutando pruebas con múltiples tareas concurrentes, interrupciones frecuentes y escenarios de carga elevada.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.6: el dispositivo deberá operar de manera segura para el usuario y para los animales.
+
+\begin{itemize}
+	\item Se verificará que los componentes eléctricos cumplan con normas de baja tensión (5–12 V) y que las partes móviles se encuentren adecuadamente cubiertas.
+	\item Se validará que el equipo pueda manipularse sin riesgo, comprobando que no haya bordes filosos ni mecanismos que puedan generar atrapamientos.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.7: el sistema deberá ser capaz de recuperarse tras un corte breve de energía.
+
+\begin{itemize}
+	\item Se verificará la implementación de mecanismos de backup, tales como RTC, memoria persistente o restauración de estados.
+	\item Se validará que, ante una interrupción simulada de alimentación, el dispositivo retome su funcionamiento sin corrupción de datos ni pérdida del estado previo.
+\end{itemize}
+
+\end{itemize}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+A continuación se establecen las pautas para realizar la evaluación final del proyecto, contemplando las siguientes actividades:
 
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
+\begin{enumerate}
+\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+	\begin{itemize}
+		\item Responsable: \authorname .
+		\item Se realizará un análisis comparativo entre las tareas planificadas y las realmente ejecutadas, identificando desvíos en tiempos, orden y carga de trabajo.
+		\item Se evaluará si los objetivos del proyecto fueron cumplidos conforme al plan original.
+		\item Se documentarán las causas principales de los desvíos y se propondrán medidas de mejora para futuros proyectos.
+	\end{itemize}
+	
+\vspace{2.5cm}
 
-\end{consigna}
+\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+	\begin{itemize}
+		\item Responsable: \authorname .
+		\item Se realizará un análisis de las técnicas, herramientas y procedimientos utilizados, identificando cuáles resultaron útiles, prescindibles o ineficientes durante el desarrollo.
+		\item Se documentarán los problemas que surgieron en la implementación y las soluciones adoptadas, junto con una valoración del impacto real de cada herramienta empleada.
+		\item Se identificarán oportunidades de mejora y la posible incorporación de nuevas técnicas o procedimientos para proyectos futuros.
+	\end{itemize}
+	
+\item Organización de presentación del proyecto:
+	\begin{itemize}
+		\item Responsable: \authorname .
+		\item Se invitará a la presentación del proyecto final a todas las personas vinculadas o colaboradoras en el proyecto, y se agradecerá al director del proyecto, a jurados, docentes, compañeros y autoridades de la Carrera de Especialización en Sistemas Embebidos.
+	\end{itemize}
+	
+\end{enumerate}
 
 \end{document}
